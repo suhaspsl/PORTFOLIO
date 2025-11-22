@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ person.name }} — {{ person.title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div id="site-wrapper">
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">{{ "PORTFOLIO" }}</a>
+        
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div>© {{ person.name }} — Built with Flask</div>
+      <div class="contact-mini">
+        <a href="mailto:{{ person.email }}">{{ person.email }}</a>
+      </div>
+    </footer>
+  </div>
+
+  <div id="overlay" class="overlay hidden" aria-hidden="true">
+    <div class="overlay-inner">
+      <button id="overlayClose" class="overlay-close">✕</button>
+      <div id="overlayContent"></div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

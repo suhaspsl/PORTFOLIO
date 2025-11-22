@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <h1 class="greeting">Hi, I'm</h1>
+    <h2 class="hero-name">{{ person.name }}</h2>
+    <p class="hero-title">{{ person.title }}</p>
+    <div class="contact-card">
+      <img src="{{ url_for('static', filename=person.mockup_hero) }}" class="hero-mock">
+      <div class="contact-details">
+        <div><strong>Email:</strong> <a href="mailto:{{ person.email }}">{{ person.email }}</a></div>
+        <div><strong>Phone:</strong> {{ person.phone }}</div>
+        <div><strong>Location:</strong> {{ person.location }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- decorative / mockup image -->
+  </div>
+</section>
+
+<section id="about" class="section about" data-title="About">
+  <div class="section-inner">
+    <h3>ABOUT</h3>
+    <p>{{ person.bio }}</p>
+
+    <h4>Technical skills</h4>
+    <ul class="skills">
+      {% for s in person.skills %}
+      <li>{{ s }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="projects" class="section projects" data-title="Projects">
+  <div class="section-inner">
+    <h3>PROJECTS</h3>
+    <div class="projects-stack" id="projectsStack">
+      {% for proj in person.projects %}
+      <article class="project-card" data-id="{{ proj.id }}" tabindex="0">
+        <div class="project-image" 
+     style="background-image:url('{{ url_for('static', filename=proj.image) }}')">
+</div>
+        <div class="project-body">
+          <h4>{{ proj.title }}</h4>
+          <p>{{ proj.summary }}</p>
+          <div class="tags">{{ ', '.join(proj.stack) }}</div>
+          <div class="project-actions">
+            <a href="{{ url_for('project', proj_id=proj.id) }}" class="btn">Open</a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section contact" data-title="Contact">
+  <div class="section-inner">
+    <h3>Contact</h3>
+    <p>If you'd like to reach out: <a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
+    <p>Phone: {{ person.phone }}</p>
+  </div>
+</section>
+
+{% endblock %}

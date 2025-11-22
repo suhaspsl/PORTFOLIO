@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="project-detail">
+  <div class="detail-inner">
+    <h2>{{ project.title }}</h2>
+    <img src="{{ url_for('static', filename=project.image) }}" class="detail-img">
+    <p>{{ project.summary }}</p>
+    <p><strong>Stack:</strong> {{ ', '.join(project.stack) }}</p>
+    <a class="btn" href="{{ project.link }}">Visit Project</a>
+  </div>
+</section>
+{% endblock %}
