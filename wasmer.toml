@@ -1,0 +1,14 @@
+[package]
+name = "portfolio"
+version = "1.0.0"
+
+[dependencies]
+python = "3.10"
+
+[build]
+# Install Python dependencies
+command = "pip install -r requirements.txt"
+
+[run]
+# Start the Flask app using Gunicorn
+command = "gunicorn app:app --bind 0.0.0.0:$PORT"
