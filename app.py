@@ -14,9 +14,7 @@ PERSON = {
     "bio": "I am a passionate software developer with experience in building web applications , AI's and applications.",
     
     "skills": [
-        "Python", "Flask", "Django",
-        "JavaScript", "React", "CSS",
-        "SQL", "Docker"
+        "Python", "Flask","JavaScript", "React", "CSS","SQL"
     ],
 
     # Pass ONLY filenames — url_for() will be used inside templates
