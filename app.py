@@ -37,14 +37,14 @@ PERSON = {
             "image": "images/portfolio.png",
             "link": "#"
         },
-       ## {
-        ##    "id": "proj-3",
-          ##  "title": "Project Three",
-          ##  "summary": "A small eCommerce prototype.",
-          ##  "stack": ["Django", "Stripe", "TailwindCSS"],
-           ## "image": "images/projects-mock3.png",
-          ##  "link": "#"
-      ##  }
+       {
+            "id": "proj-3",
+            "title": "ImageSense AI",
+            "summary": "A simple website which uses AI to generate images based on user input.",
+            "stack": ["Python", "TensorFlow", "Keras", "Flask", "NumPy", "Pillow / OpenCV", "HTML"],
+            "image": "images/projects-mock3.png",
+            "link": "#"
+      }
     ]
 }
 
