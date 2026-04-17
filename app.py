@@ -30,7 +30,7 @@ PERSON = {
             "summary": "A website to showcase my skills .",
             "stack": ["Python", "js", "css"],
             "image": "images/portfolio.png",
-            "link": "#"
+            "link": "https://github.com/suhaspsl/PORTFOLIO"
         },
        {
             "id": "proj-3",
