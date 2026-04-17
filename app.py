@@ -2,9 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# ----------------------------------------
-# Your Portfolio Data (Customize this)
-# ----------------------------------------
+
 PERSON = {
     "name": "MERUVU SUHAS",
     "title": "Software Developer",
@@ -16,9 +14,6 @@ PERSON = {
     "skills": [
         "Python", "Flask","JavaScript", "React", "CSS","SQL"
     ],
-
-    # Pass ONLY filenames — url_for() will be used inside templates
-    "mockup_hero": "images/hero-mock.png",
 
     "projects": [
         {
@@ -48,15 +43,9 @@ PERSON = {
     ]
 }
 
-
-# ----------------------------------------
-# Routes
-# ----------------------------------------
-
 @app.route('/')
 def index():
     return render_template('index.html', person=PERSON)
-
 
 @app.route('/project/<proj_id>')
 def project(proj_id):
@@ -67,11 +56,5 @@ def project(proj_id):
     
     return render_template('project.html', project=proj, person=PERSON)
 
-
-# ----------------------------------------
-# Run the app
-# ----------------------------------------
-
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000)
-# To run the app, use the command: python app.py
