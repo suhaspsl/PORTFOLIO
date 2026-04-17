@@ -7,7 +7,7 @@
     <h2 class="hero-name">{{ person.name }}</h2>
     <p class="hero-title">{{ person.title }}</p>
     <div class="contact-card">
-      <img src="{{ url_for('static', filename="E:\portfolio-flask\static\images\hero-mock.png") }}" class="hero-mock">
+      <img src="{{ url_for('static', filename='images/hero-mock.png') }}" class="hero-mock">
       <div class="contact-details">
         <div><strong>Email:</strong> <a href="mailto:{{ person.email }}">{{ person.email }}</a></div>
         <div><strong>Phone:</strong> {{ person.phone }}</div>
