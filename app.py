@@ -2,7 +2,6 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
 PERSON = {
     "name": "MERUVU SUHAS",
     "title": "Software Developer",
@@ -49,7 +48,6 @@ def index():
 
 @app.route('/project/<proj_id>')
 def project(proj_id):
-    # Find project by ID
     proj = next((p for p in PERSON["projects"] if p["id"] == proj_id), None)
     if not proj:
         return "Project not found", 404
@@ -57,4 +55,4 @@ def project(proj_id):
     return render_template('project.html', project=proj, person=PERSON)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=5000)
+    app.run(debug=True)
